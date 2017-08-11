@@ -1,0 +1,11 @@
+/*
+ * Tests the deployed version.
+ */
+import groovy.json.JsonOutput
+
+String tcf = new File('src/test/resources/karen-flew.xml').text
+
+WebService service = new ServiceClient('http://vassar.lappsgrid.org/invoker/anc:tcf-converter_1.0.0', 'tester', 'tester')
+Data data = new Data('http://vocab.lappsgrid.org/ns/media/xml#tcf', tcf)
+println JsonOutput.prettyPrint(service.execute(data.asJson()))
+println JsonOutput.prettyPrint(service.getMetadata())

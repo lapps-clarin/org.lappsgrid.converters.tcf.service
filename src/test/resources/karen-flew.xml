@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><D-Spin xmlns="http://www.dspin.de/data" version="0.4">
+    <MetaData xmlns="http://www.dspin.de/data/metadata"><Services><cmd:CMD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cmd="http://www.clarin.eu/cmd/1" CMDVersion="1.2" xsi:schemaLocation="http://www.clarin.eu/cmd/1 http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1320657629623/xsd"><cmd:Resources><cmd:ResourceProxyList></cmd:ResourceProxyList><cmd:JournalFileProxyList></cmd:JournalFileProxyList><cmd:ResourceRelationList></cmd:ResourceRelationList></cmd:Resources><cmd:Components><cmd:WebServiceToolChain><cmd:GeneralInfo><cmd:Descriptions><cmd:Description></cmd:Description></cmd:Descriptions><cmd:ResourceName>Custom chain</cmd:ResourceName><cmd:ResourceClass>Toolchain</cmd:ResourceClass></cmd:GeneralInfo><cmd:Toolchain><cmd:ToolInChain><cmd:PID>http://hdl.handle.net/11858/00-1778-0000-0004-BA56-7</cmd:PID><cmd:Parameter value="en" name="lang"></cmd:Parameter><cmd:Parameter value="text/plain" name="type"></cmd:Parameter></cmd:ToolInChain><cmd:ToolInChain><cmd:PID>http://hdl.handle.net/11022/0000-0000-2518-C</cmd:PID></cmd:ToolInChain><cmd:ToolInChain><cmd:PID>http://hdl.handle.net/11022/0000-0000-2C14-9</cmd:PID><cmd:Parameter value="en" name="lang"></cmd:Parameter></cmd:ToolInChain><cmd:ToolInChain><cmd:PID>http://hdl.handle.net/11022/0000-0000-83A0-6</cmd:PID></cmd:ToolInChain></cmd:Toolchain></cmd:WebServiceToolChain></cmd:Components></cmd:CMD></Services></MetaData>
+    <TextCorpus xmlns="http://www.dspin.de/data/textcorpus" lang="en">
+        <tc:text xmlns:tc="http://www.dspin.de/data/textcorpus">Karen flew to New York.</tc:text>
+        <tc:tokens xmlns:tc="http://www.dspin.de/data/textcorpus">
+            <tc:token ID="t_0">Karen</tc:token>
+            <tc:token ID="t_1">flew</tc:token>
+            <tc:token ID="t_2">to</tc:token>
+            <tc:token ID="t_3">New</tc:token>
+            <tc:token ID="t_4">York</tc:token>
+            <tc:token ID="t_5">.</tc:token>
+        </tc:tokens>
+        <tc:sentences xmlns:tc="http://www.dspin.de/data/textcorpus">
+            <tc:sentence tokenIDs="t_0 t_1 t_2 t_3 t_4 t_5"></tc:sentence>
+        </tc:sentences>
+        <tc:POStags xmlns:tc="http://www.dspin.de/data/textcorpus" tagset="penntb">
+            <tc:tag tokenIDs="t_0">NNP</tc:tag>
+            <tc:tag tokenIDs="t_1">VBD</tc:tag>
+            <tc:tag tokenIDs="t_2">TO</tc:tag>
+            <tc:tag tokenIDs="t_3">NNP</tc:tag>
+            <tc:tag tokenIDs="t_4">NNP</tc:tag>
+            <tc:tag tokenIDs="t_5">.</tc:tag>
+        </tc:POStags>
+        <tc:lemmas xmlns:tc="http://www.dspin.de/data/textcorpus">
+            <tc:lemma ID="l_0" tokenIDs="t_0">karen</tc:lemma>
+            <tc:lemma ID="l_1" tokenIDs="t_1">fly</tc:lemma>
+            <tc:lemma ID="l_2" tokenIDs="t_2">to</tc:lemma>
+            <tc:lemma ID="l_3" tokenIDs="t_3">new</tc:lemma>
+            <tc:lemma ID="l_4" tokenIDs="t_4">york</tc:lemma>
+            <tc:lemma ID="l_5" tokenIDs="t_5">.</tc:lemma>
+        </tc:lemmas>
+    </TextCorpus>
+</D-Spin>

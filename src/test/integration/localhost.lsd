@@ -1,0 +1,8 @@
+/*
+ * Expects the service to be running on localhost:8080
+ */
+String tcf = new File('src/test/resources/karen-flew.xml').text
+
+WebService service = new ServiceClient('http://localhost:8080/tcf-converter/1.0.0/services/converter')
+Data data = new Data('http://vocab.lappsgrid.org/ns/media/xml#tcf', tcf)
+println groovy.json.JsonOutput.prettyPrint(service.execute(data.asJson()))
