@@ -14,7 +14,10 @@ deploy:
 all: clean war deploy
 
 run:
-	docker run -d -p 8080:8080 --name tomcat -v $(ROOT)/target:/var/lib/tomcat7/webapps lappsgrid/tomcat7:1.2.1
+	docker run -d -p 8000:8080 --name tomcat -v $(ROOT)/target:/var/lib/tomcat7/webapps lappsgrid/tomcat7:1.2.3
+
+login:
+	docker exec -it tomcat /bin/bash
 
 stop:
 	docker rm -f tomcat

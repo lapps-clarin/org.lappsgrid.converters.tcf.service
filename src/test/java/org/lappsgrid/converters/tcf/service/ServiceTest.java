@@ -28,6 +28,7 @@ import org.lappsgrid.serialization.lif.Container;
 import org.lappsgrid.serialization.lif.View;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
@@ -76,6 +77,34 @@ public class ServiceTest
 		assertEquals(Uri.LIF, data.getDiscriminator());
 		validateContainer((Container)data.getPayload());
 		System.out.println(data.asPrettyJson());
+	}
+
+	@Test
+	public void testKarenTcfLif() {
+		WebService service = new TCFConverterService();
+		InputStream stream = this.getClass().getResourceAsStream("/karen-tcf.lif");
+		assertNotNull(stream);
+		BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
+		String tcf = reader.lines().collect(Collectors.joining("\n"));
+		String json = service.execute(tcf);
+		Data data = Serializer.parse(json, Data.class);
+		assertEquals(Uri.LIF, data.getDiscriminator());
+	}
+
+	@Ignore
+	public void validateInput() {
+		InputStream stream = this.getClass().getResourceAsStream("/karen-tcf.lif");
+		String tcf = null;
+		try(BufferedReader reader = new BufferedReader(new InputStreamReader(stream))) {
+			tcf = reader.lines().collect(Collectors.joining("\n"));
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+			assert false;
+		}
+		Data data = Serializer.parse(tcf, Data.class);
+		System.out.println(data.getPayload().toString());
 	}
 
 	protected void validateContainer(Container container)
