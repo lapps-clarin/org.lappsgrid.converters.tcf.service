@@ -1,0 +1,1 @@
+{"discriminator":"http://vocab.lappsgrid.org/ns/media/xml#tcf","payload":"<D-Spin xmlns=\"http://www.dspin.de/data\" version=\"0.4\">\n    <TextCorpus xmlns=\"http://www.dspin.de/data/textcorpus\" lang=\"en\">\n        <tc:text xmlns:tc=\"http://www.dspin.de/data/textcorpus\">Karen flew to New York</tc:text>\n    </TextCorpus>\n</D-Spin>"}

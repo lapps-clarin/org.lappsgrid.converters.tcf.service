@@ -1,5 +1,6 @@
 ROOT=$(shell pwd)
-WAR=tcf-converter\#1.0.0.war
+VERSION=$(shell cat VERSION)
+WAR=tcf-converter\#$(VERSION).war
 
 war:
 	mvn package

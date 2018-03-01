@@ -48,7 +48,7 @@ public class TCFConverterService implements WebService
 			logger.warn("Received an invalid discriminator: {}", data.getDiscriminator());
 			return new Data(Uri.ERROR, "Unsupported input format").asJson();
 		}
-//		return converter.convertString(data.getPayload().toString()).asJson();
+
 		Data result = null;
 		try {
 			logger.debug("Attempting to call converter.convertString");
@@ -75,6 +75,7 @@ public class TCFConverterService implements WebService
 			ServiceMetadata md = new ServiceMetadataBuilder()
 					.name("TCF Converter")
 					.vendor("http://www.lappsgrid.org")
+					.version(Version.getVersion())
 					.description("Converts TCF into LIF")
 					.license("The TCF to LIF converter is available under the `Apache 2.0 <https://www.apache.org/licenses/LICENSE-2.0>`_ license.")
 					.requireFormat(Uri.TCF)

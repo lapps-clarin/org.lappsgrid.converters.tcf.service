@@ -86,6 +86,20 @@ public class ServiceTest
 		assertNotNull(stream);
 		BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
 		String tcf = reader.lines().collect(Collectors.joining("\n"));
+		System.out.println(tcf);
+		String json = service.execute(tcf);
+		Data data = Serializer.parse(json, Data.class);
+		assertEquals(Uri.LIF, data.getDiscriminator());
+	}
+
+	@Test
+	public void testWrappedTcf() {
+		WebService service = new TCFConverterService();
+		InputStream stream = this.getClass().getResourceAsStream("/wrapped-tcf.json");
+		assertNotNull(stream);
+		BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
+		String tcf = reader.lines().collect(Collectors.joining("\n"));
+		System.out.println(tcf);
 		String json = service.execute(tcf);
 		Data data = Serializer.parse(json, Data.class);
 		assertEquals(Uri.LIF, data.getDiscriminator());
