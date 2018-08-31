@@ -1,6 +1,6 @@
 VERSION
 target/
-src/**/Version.java
+src/main/java/**/Version.java
 *.iml
 *.ipr
 *.iws
